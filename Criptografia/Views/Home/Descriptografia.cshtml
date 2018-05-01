@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Descriptografia";
+    string valorTextoDecifrado = ViewBag.textoDecifrado;
+    string valorChave = ViewBag.textoChave;
+    string valorTextoCifrado = ViewBag.textoCifrado;
+    string valorErro = ViewBag.textoErro;
+    string valorTextoOriginal = ViewBag.textoOriginal;
+}
+
+<h2>Descriptografia</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <form>
+
+            <div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label class="control-label">Texto cifrado:</label>
+                        <div>
+                            @if (valorTextoCifrado != "" && valorTextoCifrado != null)
+                            {
+                                <input type="text" style="text-transform:uppercase;width:600px" maxlength="255" value="@valorTextoCifrado" name="textoCifrado" />
+                            }
+                            else
+                            {
+                                <input type="text" style="text-transform:uppercase;width:600px" maxlength="255" value="@valorTextoOriginal" name="textoCifrado" />
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label class="control-label">Chave Criptográfica:</label>
+                        <div>
+                            <input type="text" style="text-transform:uppercase" maxlength="255" value="@valorChave" name="chave" />
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-0 col-md-10">
+                    <input type="submit" value="Descriptografar" class="btn btn-default" />
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+
+
+    <div class="form-control-static">
+        <div class="form-group">
+            <label class="control-label">Texto Decifrado:</label>
+            <div>
+                <label style="background-color:darkseagreen">@valorTextoDecifrado</label>
+            </div>
+        </div>
+    </div>
+
+    if (valorErro != null)
+    {
+        <div class="jumbotron">
+            <h1 style="color:red">Erro!</h1>
+            <p style="color:red" class="lead">@valorErro</p>
+        </div>
+
+    }
+
+
+}
