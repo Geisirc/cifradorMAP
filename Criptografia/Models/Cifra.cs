@@ -15,7 +15,7 @@ namespace Criptografia.Models
             get {
                 string _retorno = "";
 
-                comportamento = new ComportamentoCriptografia();
+                comportamento = new ComportamentoCriptografiaVigenere();
                 _retorno = comportamento.Cripto(this.textoOriginal, this.chave, false);
                 return _retorno;
             }
@@ -26,7 +26,7 @@ namespace Criptografia.Models
 
             bool _retorna = true;
 
-            ICriptografa comportamento = new ComportamentoCriptografia();
+            ICriptografa comportamento = new ComportamentoCriptografiaVigenere();
             if (! comportamento.Valida(this.textoOriginal, this.chave))
             {
                 _retorna = false;

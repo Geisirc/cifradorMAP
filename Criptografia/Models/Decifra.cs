@@ -17,7 +17,7 @@ namespace Criptografia.Models
             {
                 string _retorno = "";
 
-                comportamento = new ComportamentoDescriptografia();
+                comportamento = new ComportamentoDescriptografiaVigenere();
                 _retorno = comportamento.Cripto(this.textoCifrado, this.chave, false);
                 return _retorno;
             }
@@ -30,7 +30,7 @@ namespace Criptografia.Models
 
             bool _retorna = true;
 
-            IDescriptografa comportamento = new ComportamentoDescriptografia();
+            IDescriptografa comportamento = new ComportamentoDescriptografiaVigenere();
             if (!comportamento.Valida(this.textoCifrado, this.chave))
             {
                 _retorna = false;

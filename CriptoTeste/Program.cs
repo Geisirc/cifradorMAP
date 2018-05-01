@@ -17,8 +17,8 @@ namespace CriptoTeste
             string mensagemCifrada = "";
             string mensagemDecifrada = "";
 
-            ICriptografa compCifra = new ComportamentoCriptografia();
-            IDescriptografa compDecifra = new ComportamentoDescriptografia();
+            ICriptografa compCifra = new ComportamentoCriptografiaVigenere();
+            IDescriptografa compDecifra = new ComportamentoDescriptografiaVigenere();
 
 
             mensagemCifrada = compCifra.Cripto(mensagemOriginal.ToUpper(), chave, false);

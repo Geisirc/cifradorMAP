@@ -114,9 +114,9 @@
     </Compile>
     <Compile Include="Models\Biblioteca.cs" />
     <Compile Include="Models\Cifra.cs" />
-    <Compile Include="Models\ComportamentoCriptografia.cs" />
+    <Compile Include="Models\ComportamentoCriptografiaVigenere.cs" />
     <Compile Include="Models\Decifra.cs" />
-    <Compile Include="Models\ComportamentoDescriptografia.cs" />
+    <Compile Include="Models\ComportamentoDescriptografiaVigenere.cs" />
     <Compile Include="Models\ICriptografa.cs" />
     <Compile Include="Models\IDescriptografa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
